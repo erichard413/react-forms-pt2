@@ -2,32 +2,17 @@ import React, {useState} from 'react';
 import Todo from './Todo';
 import NewTodoForm from './NewTodoForm';
 import {v4 as uuidv4} from 'uuid';
+import './TodoList.css';
+
+
 
 const TodoList = () => {
-    const INITIAL_STATE = [
-        // {
-        // text: 'wake up',
-        // complete: true,
-        // idx: uuidv4()
-        // },
-        // {
-        // text: 'get dressed',
-        // complete: false,
-        // idx: uuidv4()
-        // },
-        // {
-        // text: 'walk dog',
-        // complete: false,
-        // idx: uuidv4()
-        // },
-        // {
-        // text: 'eat breakfast',
-        // complete: false,
-        // idx: uuidv4()
-        // }
-    ];
-
-    const [todos, setTodos] = useState(INITIAL_STATE);
+    
+    const [todos, setTodos] = useState(()=> {
+        const savedTodos = localStorage.getItem("todos");
+        const initialValue = JSON.parse(savedTodos);
+        return initialValue || "";
+    });
 
     const removeTodo = (idx) => {
         setTodos(todos => {
@@ -36,12 +21,11 @@ const TodoList = () => {
     }
 
     const markComplete = (idx) => {
-        setTodos(todos => {
-            let toDoCopy = todos.filter(t => t.idx === idx);
-            toDoCopy[0].complete = true;
-            return [...todos]
-        })
-    }
+        let copy = [...todos]
+        let toDoCopy = copy.filter(t => t.idx === idx);
+                toDoCopy[0].complete ? toDoCopy[0].complete = false : toDoCopy[0].complete = true;
+        return setTodos(copy);
+        }
 
     const addTodo = (text) => {
         let newTask = {
@@ -55,12 +39,23 @@ const TodoList = () => {
         })
     }
 
+    const editTodo = (idx, text) => {
+        setTodos(todos => {
+            let todosCopy = [...todos]
+            let toDoCopy = todosCopy.filter(t => t.idx === idx);
+            toDoCopy[0].text = text;
+            return [...todosCopy]
+        })
+    }
+
+    localStorage.setItem("todos", JSON.stringify(todos));
+
     return (
         <div className="TodoList">
             <NewTodoForm addTodo={addTodo} />
             <h2>Current To Do's</h2>
             {todos.map(t=> (
-                <Todo key={t.idx} text={t.text} idx={t.idx} removeTodo={removeTodo} complete={t.complete} markComplete={markComplete}/>
+                <Todo key={t.idx} text={t.text} idx={t.idx} removeTodo={removeTodo} complete={t.complete} markComplete={markComplete} editTodo={editTodo}/>
             ))}
         </div>
     )

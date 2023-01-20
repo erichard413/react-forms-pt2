@@ -1,9 +1,8 @@
 import React, {useState} from "react";
-import './NewTodoForm.css';
 
-const NewTodoForm =({addTodo})=> {
+const EditForm =({editTodo, idx, task, showForm})=> {
     const initialState = {
-        text: ""
+        text: {task}
     }
     const [formData, setFormData] = useState(initialState)
 
@@ -18,27 +17,24 @@ const NewTodoForm =({addTodo})=> {
     const handleSubmit = (e) => {
         e.preventDefault()
         const{text} = formData;
-        addTodo(text);
-        setFormData(initialState);
+        editTodo(idx, text);
+        setFormData(text);
+        showForm();
     }
     
     return (
-        <div className="NewTodoForm">
-            <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit}>
             <label htmlFor="text">Task: </label>
                 <input 
                 name = "text"
                 id="text"
                 type="text" 
-                placeholder="New Task" 
-                value={formData.text} 
+                placeholder={task}
                 onChange={handleChange} 
             />
-            <button>Add Task</button>
+            <button>Edit</button>
         </form>
-        </div>
-        
     )
 }
 
-export default NewTodoForm;
+export default EditForm;
