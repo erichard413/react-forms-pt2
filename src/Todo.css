@@ -1,0 +1,22 @@
+.Todo {
+    text-align: center;
+    margin-top: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 500px;
+    height: auto;
+    background-color: rgb(183, 200, 216);
+    border: 1px solid rgb(227, 233, 236);
+    border-radius: 12px;
+}
+
+.Todo p {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+.Todo span {
+    cursor: pointer;
+}
+
+.Todo-btns {
+    padding-bottom: 10px;
+}
