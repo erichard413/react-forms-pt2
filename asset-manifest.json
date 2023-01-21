@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/erichard413/react-forms-pt2/static/css/main.785b3ccf.css",
-    "main.js": "/erichard413/react-forms-pt2/static/js/main.d1dfd145.js",
-    "static/js/787.40628ed4.chunk.js": "/erichard413/react-forms-pt2/static/js/787.40628ed4.chunk.js",
-    "static/media/logo.svg": "/erichard413/react-forms-pt2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/erichard413/react-forms-pt2/index.html",
-    "main.785b3ccf.css.map": "/erichard413/react-forms-pt2/static/css/main.785b3ccf.css.map",
-    "main.d1dfd145.js.map": "/erichard413/react-forms-pt2/static/js/main.d1dfd145.js.map",
-    "787.40628ed4.chunk.js.map": "/erichard413/react-forms-pt2/static/js/787.40628ed4.chunk.js.map"
+    "main.css": "/react-forms-pt2/static/css/main.785b3ccf.css",
+    "main.js": "/react-forms-pt2/static/js/main.6b9ded03.js",
+    "static/js/787.40628ed4.chunk.js": "/react-forms-pt2/static/js/787.40628ed4.chunk.js",
+    "static/media/logo.svg": "/react-forms-pt2/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/react-forms-pt2/index.html",
+    "main.785b3ccf.css.map": "/react-forms-pt2/static/css/main.785b3ccf.css.map",
+    "main.6b9ded03.js.map": "/react-forms-pt2/static/js/main.6b9ded03.js.map",
+    "787.40628ed4.chunk.js.map": "/react-forms-pt2/static/js/787.40628ed4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.785b3ccf.css",
-    "static/js/main.d1dfd145.js"
+    "static/js/main.6b9ded03.js"
   ]
 }
